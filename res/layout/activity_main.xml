@@ -9,10 +9,40 @@
     tools:context="com.example.anothertestproject.MainActivity" >
 
 
-    <Button 
-        android:id="@+id/test_button"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"/>
+	<Button 
+	    android:id="@+id/create_button"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/create_button_text"
+	    android:paddingTop="10dp"
+	    android:paddingBottom="10dp"
+	    android:gravity="center"/>
+
+	<Button 
+	    android:id="@+id/read_button"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/read_button_text"
+	    android:paddingTop="10dp"
+	    android:gravity="center"
+	    android:layout_below="@id/create_button"/>
+
+	<Button 
+	    android:id="@+id/update_button"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/update_button_text"
+	    android:paddingTop="10dp"
+	    android:gravity="center"
+	    android:layout_below="@id/read_button"/>
+
+	<Button 
+	    android:id="@+id/delete_button"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/delete_button_text"
+	    android:paddingTop="10dp"
+	    android:gravity="center"
+	    android:layout_below="@id/update_button"/>
     
 </RelativeLayout>

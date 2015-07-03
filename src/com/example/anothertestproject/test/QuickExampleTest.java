@@ -27,6 +27,7 @@ public class QuickExampleTest extends ActivityInstrumentationTestCase2<MainActiv
 		assertTrue(myActivity.getTitle().toString().equals("AnotherTestProject"));
 	}
 	
+	
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();

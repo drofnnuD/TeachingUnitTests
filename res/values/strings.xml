@@ -4,5 +4,9 @@
     <string name="app_name">AnotherTestProject</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="create_button_text">Create</string>
+    <string name="read_button_text">Read</string>
+    <string name="update_button_text">Update</string>
+    <string name="delete_button_text">Delete</string>
 
 </resources>
