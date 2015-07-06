@@ -30,7 +30,6 @@ public class SQLiteHelper extends SQLiteOpenHelper{
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL(CREATE_TABLE_PEOPLE);
-		db.close();
 	}
 
 	@Override
@@ -44,7 +43,6 @@ public class SQLiteHelper extends SQLiteOpenHelper{
 		ContentValues values = new ContentValues();
 		values.put(PEOPLE_FIRST_NAME, "Matthew");
 		db.insert(TABLE_PEOPLE, null, values);
-		db.close();
 	}
 	
 	public List<String> getAllPeople(){
@@ -56,6 +54,7 @@ public class SQLiteHelper extends SQLiteOpenHelper{
 		while(cursor.moveToNext()){
 			allPeople.add(cursor.getString(1));
 		}
+		db.close();
 		return allPeople;
 	}
 	

@@ -1,12 +1,17 @@
 package com.example.anothertestproject.test;
 
-import com.example.anothertestproject.MainActivity;
+import java.util.ArrayList;
+import java.util.List;
 
 import android.test.ActivityInstrumentationTestCase2;
+
+import com.example.anothertestproject.MainActivity;
+import com.example.anothertestproject.database.SQLiteHelper;
 
 public class QuickExampleTest extends ActivityInstrumentationTestCase2<MainActivity>{
 
 	private MainActivity myActivity;
+	List<String> tempList;
 	
 	public QuickExampleTest(){
 		super(MainActivity.class);
@@ -27,6 +32,18 @@ public class QuickExampleTest extends ActivityInstrumentationTestCase2<MainActiv
 		assertTrue(myActivity.getTitle().toString().equals("AnotherTestProject"));
 	}
 	
+	public void testCreateMethod(){
+		SQLiteHelper dbHelper = new SQLiteHelper(myActivity.getApplicationContext());
+		tempList = dbHelper.getAllPeople();
+		assertNotNull(tempList);
+		assertTrue(tempList.get(0).equals("Matthew"));
+	}
+	
+	public void testReadMethod(){
+		SQLiteHelper dbHelper = new SQLiteHelper(myActivity.getApplicationContext());
+		List<String> tempList = dbHelper.getAllPeople();
+		assertEquals("Matthew", tempList.get(0));
+	}
 	
 	@Override
 	protected void tearDown() throws Exception {
