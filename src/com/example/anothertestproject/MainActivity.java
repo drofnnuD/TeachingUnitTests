@@ -12,12 +12,16 @@ import android.widget.Toast;
 
 import com.example.anothertestproject.database.SQLiteHelper;
 
+/**
+ * 
+ * @author MDunn
+ *
+ */
 public class MainActivity extends Activity {
 
+	//only button needed to add something to the DB initally so that it can be tested
 	Button createButton;
-	Button readButton;
-	Button updateButton;
-	Button deleteButton;
+
 	SQLiteHelper dbHelper = new SQLiteHelper(this);
 	List<String> tempList = new ArrayList<String>();
 	
@@ -32,24 +36,13 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				//adding value to db when clicked
 				dbHelper.insetNameToDB();
 				tempList = dbHelper.getAllPeople();
-				Log.d("test1", tempList.get(0));
 				Toast.makeText(getApplicationContext(), "Insert", Toast.LENGTH_LONG).show();
 			}
 		});
 		
-		updateButton = (Button)findViewById(R.id.update_button);
-		
-		updateButton.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				dbHelper.updateResult("1", "Test");
-				tempList = dbHelper.getAllPeople();
-				Log.d("Test2", tempList.get(0));
-			}
-		});
 	}
 
 }

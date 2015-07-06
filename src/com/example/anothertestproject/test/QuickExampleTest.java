@@ -9,6 +9,12 @@ import android.util.Log;
 import com.example.anothertestproject.MainActivity;
 import com.example.anothertestproject.database.SQLiteHelper;
 
+
+/**
+ * 
+ * @author MDunn
+ *
+ */
 public class QuickExampleTest extends ActivityInstrumentationTestCase2<MainActivity>{
 
 	private MainActivity myActivity;
