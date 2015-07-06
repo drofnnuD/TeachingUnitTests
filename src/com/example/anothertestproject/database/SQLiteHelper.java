@@ -58,5 +58,21 @@ public class SQLiteHelper extends SQLiteOpenHelper{
 		return allPeople;
 	}
 	
-
+	public void updateResult(String passedID, String newNameValue){
+		SQLiteDatabase dbHelper = this.getWritableDatabase();
+		String sqlStatement = "UPDATE " + TABLE_PEOPLE +
+				" SET " + PEOPLE_FIRST_NAME + " = '" + newNameValue 
+				+ "' WHERE " + PEOPLE_ID + " = " + passedID + ";";
+		dbHelper.execSQL(sqlStatement);
+		dbHelper.close();
+	}
+	
+	public void deleteResult(String passedID){
+		SQLiteDatabase dbHelper = this.getWritableDatabase();
+		String sqlStatemnt = "DELETE FROM " + TABLE_PEOPLE + " WHERE " +
+				PEOPLE_ID + " = " + passedID;
+		dbHelper.execSQL(sqlStatemnt);
+		dbHelper.close();
+	}
+	
 }

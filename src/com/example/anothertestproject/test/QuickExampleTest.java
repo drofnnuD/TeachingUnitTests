@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.util.Log;
 
 import com.example.anothertestproject.MainActivity;
 import com.example.anothertestproject.database.SQLiteHelper;
@@ -44,6 +45,23 @@ public class QuickExampleTest extends ActivityInstrumentationTestCase2<MainActiv
 		List<String> tempList = dbHelper.getAllPeople();
 		assertEquals("Matthew", tempList.get(0));
 	}
+	
+	public void updateMethodTest(){
+		SQLiteHelper dbHelper = new SQLiteHelper(myActivity.getApplicationContext());
+		dbHelper.insetNameToDB();
+		List<String> firstList = dbHelper.getAllPeople();
+		Log.d("tag", firstList.get(0));
+		assertEquals("Matthew", firstList.get(0));
+		dbHelper.updateResult("0", "Steve");
+		List<String> tempList = dbHelper.getAllPeople();
+		Log.d("tag2", tempList.get(0));
+		assertEquals("Steve", tempList.get(0));
+	}
+	
+	public void deleteMethodTest(){
+		
+	}
+	
 	
 	@Override
 	protected void tearDown() throws Exception {
