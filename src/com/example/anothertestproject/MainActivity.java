@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				dbHelper.updateResult("0", "Test");
+				dbHelper.updateResult("1", "Test");
 				tempList = dbHelper.getAllPeople();
 				Log.d("Test2", tempList.get(0));
 			}

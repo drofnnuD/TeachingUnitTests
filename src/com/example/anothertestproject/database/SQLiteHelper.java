@@ -61,8 +61,8 @@ public class SQLiteHelper extends SQLiteOpenHelper{
 	public void updateResult(String passedID, String newNameValue){
 		SQLiteDatabase dbHelper = this.getWritableDatabase();
 		String sqlStatement = "UPDATE " + TABLE_PEOPLE +
-				" SET " + PEOPLE_FIRST_NAME + " = '" + newNameValue 
-				+ "' WHERE " + PEOPLE_ID + " = " + passedID + ";";
+				" SET " + PEOPLE_FIRST_NAME + " = \"" + newNameValue 
+				+ "\" WHERE " + PEOPLE_ID + " = " + passedID + ";";
 		dbHelper.execSQL(sqlStatement);
 		dbHelper.close();
 	}

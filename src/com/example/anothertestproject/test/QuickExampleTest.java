@@ -46,16 +46,13 @@ public class QuickExampleTest extends ActivityInstrumentationTestCase2<MainActiv
 		assertEquals("Matthew", tempList.get(0));
 	}
 	
-	public void updateMethodTest(){
+	public void testUpdateMethod(){
 		SQLiteHelper dbHelper = new SQLiteHelper(myActivity.getApplicationContext());
-		dbHelper.insetNameToDB();
-		List<String> firstList = dbHelper.getAllPeople();
-		Log.d("tag", firstList.get(0));
-		assertEquals("Matthew", firstList.get(0));
-		dbHelper.updateResult("0", "Steve");
 		List<String> tempList = dbHelper.getAllPeople();
-		Log.d("tag2", tempList.get(0));
-		assertEquals("Steve", tempList.get(0));
+		assertEquals("Matthew", tempList.get(0));
+		dbHelper.updateResult("1", "Test");
+		List<String> secondList = dbHelper.getAllPeople();
+		assertEquals("Test", secondList.get(0));
 	}
 	
 	public void deleteMethodTest(){
