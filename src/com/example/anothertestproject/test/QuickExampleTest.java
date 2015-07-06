@@ -56,7 +56,12 @@ public class QuickExampleTest extends ActivityInstrumentationTestCase2<MainActiv
 	}
 	
 	public void deleteMethodTest(){
-		
+		SQLiteHelper dbHelper = new SQLiteHelper(myActivity.getApplicationContext());
+		List<String> tempList = new ArrayList<String>();
+		assertEquals("Test", tempList.get(0));
+		dbHelper.deleteResult("1");
+		List<String> secondList = dbHelper.getAllPeople();
+		assertTrue(secondList.isEmpty());
 	}
 	
 	
