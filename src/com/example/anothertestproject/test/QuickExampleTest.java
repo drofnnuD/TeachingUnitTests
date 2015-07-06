@@ -55,15 +55,14 @@ public class QuickExampleTest extends ActivityInstrumentationTestCase2<MainActiv
 		assertEquals("Test", secondList.get(0));
 	}
 	
-	public void deleteMethodTest(){
+	public void testZDeleteMethod(){
 		SQLiteHelper dbHelper = new SQLiteHelper(myActivity.getApplicationContext());
-		List<String> tempList = new ArrayList<String>();
-		assertEquals("Test", tempList.get(0));
+//		List<String> tempList = new ArrayList<String>();
+//		assertEquals("Matthew", tempList.get(0));
 		dbHelper.deleteResult("1");
 		List<String> secondList = dbHelper.getAllPeople();
 		assertTrue(secondList.isEmpty());
 	}
-	
 	
 	@Override
 	protected void tearDown() throws Exception {
